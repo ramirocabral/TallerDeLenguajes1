@@ -60,7 +60,7 @@ void printArray(int *arr, int n){
     printf("\n");
 }
 
-void printMatrix(int matriz[5][5], int n, int m){
+void printMatrix(int matriz[5][5], int n, int m){  //bullshit
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -74,7 +74,7 @@ void printMatrix(int matriz[5][5], int n, int m){
 
 
 void mergeSort (int *arr, int n){
-    int *left = (int*)malloc(n/2*sizeof(int)); //determina las dos mitad
+    int *left = (int*)malloc(n/2*sizeof(int)); //determina las dos mitades
     int *right = (int*)malloc(n/2*sizeof(int));
     int i,j,k;
     for (i = 0; i < n/2; i++)
