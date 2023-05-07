@@ -14,43 +14,15 @@ int *arrRandom(int n){
     return arr;
 }   
 
-void matrizRandom(int *arr, int n, int m){ 
-    int i,j;
-    for (i = 0; i < n; i++)
-    {
-        for (j = 0; j < m; j++)
-        {
-            *((arr + i*n) + j) = rand()%100;
-        }
+//inicializa un array con valores random
+void init(int *arr, int n){
+    srand(time(NULL));
+    for (int i=0; i<n; i++){
+        *(arr+i) = rand()%100;
     }
 }
 
-void matrizRandom3d(int *arr, int n, int m, int k){ 
-    int i,j,l;
-    for (i = 0; i < n; i++)
-    {
-        for (j = 0; j < m; j++)
-        {
-            for (l = 0; l < k; l++)
-            {
-                *((arr + i*n*m) + j*m + l) = rand()%100;
-            }
-        }
-    }
-}
 
-void printMatriz(int *arr, int n, int m){
-    int i,j;
-    for (i = 0; i < n; i++)
-    {
-        for (j = 0; j < m; j++)
-        {
-            printf("%d ", *((arr + i*n) + j));
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
 
 void printArray(int *arr, int n){
     for (int i = 0; i < n; i++)
@@ -60,16 +32,17 @@ void printArray(int *arr, int n){
     printf("\n");
 }
 
-void printMatrix(int matriz[5][5], int n, int m){  //bullshit
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            printf("%d ", matriz[i][j]);
-        }
-        printf("\n");
+
+//maximo elemento de un array
+int max(int *arr, int n){
+    int m = -999;
+
+    for (int i=0;i<n;i++){
+        if (*(arr + i) > m)
+            m = *(arr + i);
     }
-    printf("\n");
+
+    return m;
 }
 
 
