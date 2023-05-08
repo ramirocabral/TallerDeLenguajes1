@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../utils/linkedList.h"
+#include "../../utils/linkedList.h"
 
 int main(){
     int n;

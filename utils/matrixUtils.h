@@ -23,7 +23,7 @@ void initMatrix(int **matrix,int n,int m){
 }
 
 
-void matrizRandom3d(int *arr, int n, int m, int k){ 
+void matrixRandom3d(int *arr, int n, int m, int k){ 
     int i,j,l;
     for (i = 0; i < n; i++)
     {
@@ -50,10 +50,32 @@ void printMatrix(int **arr, int n, int m){
     printf("\n");
 }
 
-void freeMatrix(int **arr, int n, int m){
+void freeMatrix(int **arr, int n){
     for (int i=0; i<n; i++){
         free(arr[i]);
     }
+    free(arr);
+}
+
+void loadMatrixWithArray(int *arr, int m, int n){
+    srand(time(NULL));
+    for (int i=0; i<m; i++){
+        for (int j=0; j<n; j++){
+            *((arr+ i*m)+j) = rand()%100;
+        }
+    }
+}
+
+void printMatrixWithArray(int *arr, int m, int n){
+    for (int i=0; i<m; i++){
+        for (int j=0; j<n; j++){
+            int val = *((arr + i*m) + j);
+            printf("[%d][%d] : %d\n",i,j,val);
+        }
+    }
+}
+
+void freeMatrixWithArray(int *arr){
     free(arr);
 }
 

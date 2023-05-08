@@ -50,6 +50,23 @@ void addAtEnd(list *l, int n){
         *l = aux;
 }
 
+void addValue(list *l, int n){
+    list aux;
+    aux = (list)malloc(sizeof(node));
+    aux->value=n;
+    list act = *l;
+    list ant = act;
+    while ((act != NULL) && ((act->value) < n)){
+        ant = act;
+        act = (*act).next;
+    }
+    (*aux).next = act;
+    if (act == ant)
+        *l = aux;
+    else
+        (*ant).next = aux;
+}
+
 int sizeOfList(list l){
     int size = 0;
     while(l != NULL){
