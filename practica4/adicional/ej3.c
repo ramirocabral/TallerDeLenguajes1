@@ -11,7 +11,6 @@ typedef struct  {
     int bombs;
     bool flag;
     bool isBomb;
-    bool isMarked;
     bool visible;
 }box;
 
@@ -74,7 +73,6 @@ void initBoard(box matrix[CANT][CANT]){
         for (int j=0; j<CANT; j++){
             matrix[i][j].bombs = 0;
             matrix[i][j].isBomb = false;
-            matrix[i][j].isMarked = false;
             matrix[i][j].visible = false;
             matrix[i][j].flag = false;
         }
