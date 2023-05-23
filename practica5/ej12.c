@@ -61,11 +61,14 @@ int main(){
 
 void loadFile(FILE *f, list l){
     entry aux;
+    int cant=0;
     while(l != NULL){
         aux = l->e;
         fwrite(&aux,sizeof(entry),1,f);
         l = (*l).next;
+        cant ++;
     }
+    printf("cant: %d\n",cant);
 }
 
 void addValue(list *l, entry e){
