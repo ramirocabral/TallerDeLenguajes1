@@ -11,11 +11,9 @@ typedef struct node{
 typedef node *list;
 
 
-list initList(int val){
+list initList(){
     list aux = (list)malloc(sizeof(node));
-    aux->value = val;
     aux->next = NULL;
-
     return aux;
 }
 
@@ -102,6 +100,14 @@ int removeValue(list *l, int n){
         free(act);
     }
     return ok;
+}
+
+int removeFirstElement(list *l){
+    int n = (*l)->value;
+    list aux = *l;
+    *l = (*l)->next;
+    free(aux);
+    return n;
 }
 
 void removeTraverse(list l, int n){
